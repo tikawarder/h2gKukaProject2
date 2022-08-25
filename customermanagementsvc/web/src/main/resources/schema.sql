@@ -1,5 +1,7 @@
---KUKA-0005 Create Customer domain
-
+CREATE TABLE Address_type (
+    id 		BIGINT		 	PRIMARY KEY AUTO_INCREMENT,
+    type 	VARCHAR(32) 	NOT NULL,
+);
 CREATE TABLE IF NOT EXISTS Customers (
     customer_id BIGINT PRIMARY KEY AUTO_INCREMENT,
     firstName VARCHAR(24) NOT NULL,
