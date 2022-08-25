@@ -6,8 +6,7 @@ import lombok.Value;
 @Value
 @Builder(setterPrefix = "with")
 public class Address {
-    
-    long id;
+    int id;
     String name;
     String zipCode;
     String state;
