@@ -1,5 +1,6 @@
 package com.kuka.h2g.domain.customer;
 
+import com.kuka.h2g.domain.address.Address;
 import lombok.Builder;
 import lombok.Value;
 
@@ -10,7 +11,7 @@ public class Customer {
     int customerId;
     String firstName;
     String secondName;
-    String address;
+    Address address;
     String phone;
     String email;
 }
