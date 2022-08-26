@@ -1,5 +1,6 @@
 package com.kuka.h2g.dal.entities.customer;
 
+import com.kuka.h2g.domain.address.Address;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
@@ -16,8 +17,7 @@ public class CustomerEntity {
     private String secondName;
     @OneToOne
     @JoinColumn(name = "address_id")
-    //Todo: change String to Address type when KUKA-0004 is merged
-    private String address;
+    private Address address;
     private String phone;
     private String email;
 }
