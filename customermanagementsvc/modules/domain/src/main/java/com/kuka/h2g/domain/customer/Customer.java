@@ -8,7 +8,7 @@ import lombok.Value;
 @Builder(setterPrefix = "with")
 public class Customer {
 
-    int customerId;
+    long customerId;
     String firstName;
     String secondName;
     Address address;
