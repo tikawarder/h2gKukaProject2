@@ -1,11 +1,11 @@
 package com.kuka.h2g.dal.entities.customer;
 
 import com.kuka.h2g.dal.entities.address.AddressEntity;
-import com.kuka.h2g.domain.address.Address;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -16,9 +16,9 @@ public class CustomerEntity {
     private long customerId;
     private String firstName;
     private String secondName;
-    @OneToOne
+    @OneToMany
     @JoinColumn(name = "address_id")
-    private AddressEntity address;
+    private List<AddressEntity> addresses;
     private String phone;
     private String email;
 }
