@@ -24,6 +24,7 @@ public class AddressEntity {
     private String streetName;
 
     @Column (name = "address_type")
+    @Enumerated
     private AddressTypeEntity addressType;
 
     private String number;

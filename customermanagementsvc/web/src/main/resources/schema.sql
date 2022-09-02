@@ -11,8 +11,6 @@ CREATE TABLE Address (
     address_type INTEGER(32) 	NOT NULL,
 	number 	    VARCHAR(8)	 	NOT NULL,
 	FOREIGN KEY (address) 	REFERENCES Address_type(id)
-    id 		BIGINT		 	PRIMARY KEY AUTO_INCREMENT,
-    type 	VARCHAR(32) 	NOT NULL,
 );
 CREATE TABLE IF NOT EXISTS Customers (
     customer_id BIGINT PRIMARY KEY AUTO_INCREMENT,
