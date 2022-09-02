@@ -1,20 +1,14 @@
 package com.kuka.h2g.dal.entities.address;
 
-import lombok.Data;
+public enum AddressTypeEntity {
+    UTCA("utca"),TÉR("tér"),ÚT("út"),KÖZ("köz"),DŰLŐ("dűlő");
 
-import javax.persistence.*;
+    private final String value;
 
-@Entity
-@Table(name="Address_type")
-@Data
-public class AddressTypeEntity {
+    AddressTypeEntity(String value) {
+        this.value = value;
+    }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-
-    private String type;
-
-    @OneToOne (mappedBy = "address_type")
-    private AddressEntity address;
+    public String getValue() {
+       return value;}
 }
