@@ -1,7 +1,6 @@
 package com.kuka.h2g.service.customer;
 
 import com.kuka.h2g.dal.dao.customer.CustomerDao;
-import com.kuka.h2g.dal.dao.customer.CustomerDaoImpl;
 import com.kuka.h2g.domain.customer.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

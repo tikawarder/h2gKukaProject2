@@ -5,21 +5,21 @@ import com.kuka.h2g.dal.entities.address.AddressEntity;
 import com.kuka.h2g.dal.entities.customer.CustomerEntity;
 import com.kuka.h2g.domain.address.Address;
 import com.kuka.h2g.domain.customer.Customer;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class CustomerServiceTest {
 
     private static final String FIRST_NAME = "Kecske";
-    private static final AddressEntity ADDRESS_ENTITY = new AddressEntity();
-    private static final Address ADDRESS = Address.builder().build();
+    private static final List<AddressEntity> ADDRESS_ENTITIES =List.of(new AddressEntity());
+    private static final List<Address> ADDRESSES = List.of( Address.builder().build());
     public static final String SECOND_NAME = "Macska";
     public static final String PHONE = "0758987866";
     public static final String EMAIL = "kecske@macska.com";
@@ -62,7 +62,7 @@ public class CustomerServiceTest {
                     .withSecondName(SECOND_NAME)
                     .withPhone(PHONE)
                     .withEmail(EMAIL)
-                    .withAddress(ADDRESS)
+                    .withAddresses(ADDRESSES)
                     .build();
         }
         return Customer.builder()
@@ -71,7 +71,7 @@ public class CustomerServiceTest {
                 .withSecondName(SECOND_NAME)
                 .withPhone(PHONE)
                 .withEmail(EMAIL)
-                .withAddress(ADDRESS)
+                .withAddresses(ADDRESSES)
                 .build();
     }
 
@@ -84,7 +84,7 @@ public class CustomerServiceTest {
         customerEntity.setSecondName(SECOND_NAME);
         customerEntity.setPhone(PHONE);
         customerEntity.setEmail(EMAIL);
-        customerEntity.setAddress(ADDRESS_ENTITY);
+        customerEntity.setAddresses(ADDRESS_ENTITIES);
         return customerEntity;
     }
 
