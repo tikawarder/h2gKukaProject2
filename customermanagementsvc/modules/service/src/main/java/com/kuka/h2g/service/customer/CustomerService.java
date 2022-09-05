@@ -15,4 +15,13 @@ public class CustomerService {
         return customerDao.save(customer);
     }
 
+    public boolean deleteCustomer(Customer customer){
+        return customerDao.delete(customer);
+    }
+    public boolean deleteCustomerById(long customerId){
+        return customerDao.deleteById(customerId);
+    }
+
+
+
 }
