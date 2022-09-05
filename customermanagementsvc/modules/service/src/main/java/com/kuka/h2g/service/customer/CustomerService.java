@@ -11,7 +11,7 @@ public class CustomerService {
     @Autowired
     private CustomerDao customerDao;
 
-    public Customer createCustomer(Customer customer){
+    public Customer saveCustomer(Customer customer){
         return customerDao.save(customer);
     }
 
