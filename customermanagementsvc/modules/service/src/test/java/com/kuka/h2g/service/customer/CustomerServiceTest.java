@@ -12,7 +12,8 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.util.List;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 public class CustomerServiceTest {
@@ -54,6 +55,78 @@ public class CustomerServiceTest {
 
         assertEquals(customerWithId,result);
     }
+
+    @Test
+    void testDeleteCustomerShouldReturnTrueForSuccessfulOperation(){
+        //GIVEN
+        Customer customer = createCustomer(1L);
+
+        when(customerDao.delete(customer)).thenReturn(true);
+
+        //WHEN
+        verifyNoInteractions(customerDao);
+
+        boolean result = underTest.deleteCustomer(customer);
+
+        //THEN
+        verify(customerDao).delete(customer);
+        verifyNoMoreInteractions(customerDao);
+
+        assertTrue(result);
+    }
+    @Test
+    void testDeleteCustomerShouldReturnFalseForUnsuccessfulOperation(){
+        //GIVEN
+        Customer customer = createCustomer(1L);
+
+        when(customerDao.delete(customer)).thenReturn(false);
+
+        //WHEN
+        verifyNoInteractions(customerDao);
+
+        boolean result = underTest.deleteCustomer(customer);
+
+        //THEN
+        verify(customerDao).delete(customer);
+        verifyNoMoreInteractions(customerDao);
+
+        assertFalse(result);
+    }
+
+    @Test
+    void testDeleteCustomerByIdShouldReturnTrueForSuccessfulOperation(){
+        //GIVEN
+        when(customerDao.deleteById(1L)).thenReturn(true);
+
+        //WHEN
+        verifyNoInteractions(customerDao);
+
+        boolean result = underTest.deleteCustomerById(1L);
+
+        //THEN
+        verify(customerDao).deleteById(1L);
+        verifyNoMoreInteractions(customerDao);
+
+        assertTrue(result);
+    }
+
+    @Test
+    void testDeleteCustomerByIdShouldReturnFalseForUnsuccessfulOperation(){
+        //GIVEN
+        when(customerDao.deleteById(1L)).thenReturn(false);
+
+        //WHEN
+        verifyNoInteractions(customerDao);
+
+        boolean result = underTest.deleteCustomerById(1L);
+
+        //THEN
+        verify(customerDao).deleteById(1L);
+        verifyNoMoreInteractions(customerDao);
+
+        assertFalse(result);
+    }
+
 
     private Customer createCustomer(Long id) {
         if(id == null){
