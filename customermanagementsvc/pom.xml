@@ -97,6 +97,9 @@
 				<configuration>
 					<excludes>
 						<exclude>com/kuka/h2g/domain/**/**</exclude>
+						<exclude>com/kuka/h2g/dal/entities/**</exclude>
+						<exclude>com/kuka/h2g/dal/exceptions/**</exclude>
+						<exclude>com/kuka/h2g/dal/repositories/**</exclude>
 					</excludes>
 				</configuration>
 				<executions>
@@ -105,6 +108,13 @@
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
+					</execution>
+					<execution>
+					<id>post-unit-test</id>
+					<phase>test</phase>
+					<goals>
+						<goal>report</goal>
+					</goals>
 					</execution>
 					<execution>
 						<id>default-check</id>
