@@ -37,7 +37,7 @@ public class CustomerServiceTest {
     }
 
     @Test
-    void testCreateCustomerShouldReturnCustomerWithId(){
+    void testSaveCustomerShouldReturnCustomerCreated(){
         //GIVEN
         Customer customerWithId = createCustomer(1L);
         Customer customerWithoutId = createCustomer(null);
@@ -47,13 +47,32 @@ public class CustomerServiceTest {
         //WHEN
         verifyNoInteractions(customerDao);
 
-        Customer result = underTest.createCustomer(customerWithoutId);
+        Customer result = underTest.saveCustomer(customerWithoutId);
 
         //THEN
         verify(customerDao).save(customerWithoutId);
         verifyNoMoreInteractions(customerDao);
 
         assertEquals(customerWithId,result);
+    }
+
+    @Test
+    void testSaveCustomerShouldReturnCustomerUpdated(){
+        //GIVEN
+        Customer updateCustomer = createCustomer(1L);
+
+        when(customerDao.save(updateCustomer)).thenReturn(updateCustomer);
+
+        //WHEN
+        verifyNoInteractions(customerDao);
+
+        Customer result = underTest.saveCustomer(updateCustomer);
+
+        //THEN
+        verify(customerDao).save(updateCustomer);
+        verifyNoMoreInteractions(customerDao);
+
+        assertEquals(updateCustomer,result);
     }
 
     @Test
