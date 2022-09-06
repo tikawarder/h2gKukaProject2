@@ -1,6 +1,7 @@
-package com.kuka.h2g.dal.transformers;
+package com.kuka.h2g.dal.transformers.customer;
 
 import com.kuka.h2g.dal.entities.customer.CustomerEntity;
+import com.kuka.h2g.dal.transformers.address.AddressTransformer;
 import com.kuka.h2g.domain.customer.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

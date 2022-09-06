@@ -1,6 +1,7 @@
-package com.kuka.h2g.dal.transformers;
+package com.kuka.h2g.dal.transformers.address;
 
 import com.kuka.h2g.dal.entities.address.AddressTypeEntity;
+import com.kuka.h2g.dal.transformers.address.AddressTypeTransformer;
 import com.kuka.h2g.domain.address.AddressType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class AddressTypeTransformerTest {
+public class AddressTypeTransformerTest {
 
     public static final AddressTypeEntity ENTITY = AddressTypeEntity.DŰLŐ;
     public static final AddressType DOMAIN = AddressType.VINEYARD;
@@ -33,7 +34,7 @@ class AddressTypeTransformerTest {
     }
 
     @Test
-    public void testTransformShouldTransformEntityAndReturnDomainObject(){
+    void testTransformShouldTransformEntityAndReturnDomainObject(){
         //Given
         when(addressTypeEntityToDomainMap.get(ENTITY)).thenReturn(DOMAIN);
         //When
@@ -46,7 +47,7 @@ class AddressTypeTransformerTest {
     }
 
     @Test
-    public void testTransformShouldTransformDomainObjectAndReturnEntity(){
+    void testTransformShouldTransformDomainObjectAndReturnEntity(){
         //Given
         when(addressTypeDomainToEntityMap.get(DOMAIN)).thenReturn(ENTITY);
         //When

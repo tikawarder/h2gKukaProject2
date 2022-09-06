@@ -1,4 +1,4 @@
-package com.kuka.h2g.dal.transformers;
+package com.kuka.h2g.dal.transformers.address;
 
 import com.kuka.h2g.dal.entities.address.AddressEntity;
 import com.kuka.h2g.domain.address.Address;

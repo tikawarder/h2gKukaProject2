@@ -1,4 +1,4 @@
-package com.kuka.h2g.dal.dao;
+package com.kuka.h2g.dal.dao.address;
 
 import com.kuka.h2g.domain.address.Address;
 

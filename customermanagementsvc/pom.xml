@@ -100,6 +100,8 @@
 						<exclude>com/kuka/h2g/dal/entities/**</exclude>
 						<exclude>com/kuka/h2g/dal/exceptions/**</exclude>
 						<exclude>com/kuka/h2g/dal/repositories/**</exclude>
+						<exclude>com/kuka/h2g/dal/transformers/address/config/**</exclude>
+						<exclude>com/kuka/h2g/customermanagementsvc/**</exclude>
 					</excludes>
 				</configuration>
 				<executions>

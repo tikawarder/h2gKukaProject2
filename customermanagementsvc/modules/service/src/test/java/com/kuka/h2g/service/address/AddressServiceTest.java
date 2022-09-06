@@ -1,6 +1,6 @@
-package com.kuka.h2g.service.Address;
+package com.kuka.h2g.service.address;
 
-import com.kuka.h2g.dal.dao.AddressDao;
+import com.kuka.h2g.dal.dao.address.AddressDao;
 import com.kuka.h2g.domain.address.Address;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,7 +11,7 @@ import org.mockito.MockitoAnnotations;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class AddressServiceTest {
+public class AddressServiceTest {
 
     public static final long ADDRESS_ID = 12L;
     @Mock

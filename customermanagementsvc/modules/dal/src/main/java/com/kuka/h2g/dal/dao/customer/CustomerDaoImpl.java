@@ -1,9 +1,9 @@
 package com.kuka.h2g.dal.dao.customer;
 
-import com.kuka.h2g.dal.CustomerException.CustomerNotFoundException;
+import com.kuka.h2g.dal.exceptions.CustomerNotFoundException;
 import com.kuka.h2g.dal.entities.customer.CustomerEntity;
 import com.kuka.h2g.dal.repositories.customer.CustomerRepository;
-import com.kuka.h2g.dal.transformers.CustomerTransformer;
+import com.kuka.h2g.dal.transformers.customer.CustomerTransformer;
 import com.kuka.h2g.domain.customer.Customer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
