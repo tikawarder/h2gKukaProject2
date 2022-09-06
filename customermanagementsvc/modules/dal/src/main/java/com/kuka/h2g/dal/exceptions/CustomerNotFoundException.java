@@ -1,4 +1,4 @@
-package com.kuka.h2g.dal.CustomerException;
+package com.kuka.h2g.dal.exceptions;
 
 import org.springframework.stereotype.Component;
 

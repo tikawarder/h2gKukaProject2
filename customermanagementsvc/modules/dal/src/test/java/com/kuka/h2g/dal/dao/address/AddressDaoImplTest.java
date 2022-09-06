@@ -1,10 +1,10 @@
-package com.kuka.h2g.dal.dao;
+package com.kuka.h2g.dal.dao.address;
 
 import com.kuka.h2g.dal.entities.address.AddressEntity;
 import com.kuka.h2g.dal.entities.address.AddressTypeEntity;
 import com.kuka.h2g.dal.exceptions.NoReturnDataException;
 import com.kuka.h2g.dal.repositories.address.AddressRepository;
-import com.kuka.h2g.dal.transformers.AddressTransformer;
+import com.kuka.h2g.dal.transformers.address.AddressTransformer;
 import com.kuka.h2g.domain.address.Address;
 import com.kuka.h2g.domain.address.AddressType;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,7 +19,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class AddressDaoImplTest {
+public class AddressDaoImplTest {
 
     public static final long ADDRESS_ID = 12L;
     public static final long ID_FOR_1ST_ADDRESS_IN_LIST = 1L;

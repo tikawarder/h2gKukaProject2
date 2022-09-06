@@ -1,10 +1,10 @@
 package com.kuka.h2g.dal.dao.customer;
 
-import com.kuka.h2g.dal.CustomerException.CustomerNotFoundException;
+import com.kuka.h2g.dal.exceptions.CustomerNotFoundException;
 import com.kuka.h2g.dal.entities.address.AddressEntity;
 import com.kuka.h2g.dal.entities.customer.CustomerEntity;
 import com.kuka.h2g.dal.repositories.customer.CustomerRepository;
-import com.kuka.h2g.dal.transformers.CustomerTransformer;
+import com.kuka.h2g.dal.transformers.customer.CustomerTransformer;
 import com.kuka.h2g.domain.address.Address;
 import com.kuka.h2g.domain.customer.Customer;
 import org.junit.jupiter.api.BeforeEach;

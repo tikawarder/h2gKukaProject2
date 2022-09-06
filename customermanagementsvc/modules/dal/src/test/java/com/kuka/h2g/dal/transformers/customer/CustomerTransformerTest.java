@@ -1,9 +1,9 @@
-package com.kuka.h2g.dal.dao.customer;
+package com.kuka.h2g.dal.transformers.customer;
 
 import com.kuka.h2g.dal.entities.address.AddressEntity;
 import com.kuka.h2g.dal.entities.customer.CustomerEntity;
-import com.kuka.h2g.dal.transformers.AddressTransformer;
-import com.kuka.h2g.dal.transformers.CustomerTransformer;
+import com.kuka.h2g.dal.transformers.address.AddressTransformer;
+import com.kuka.h2g.dal.transformers.customer.CustomerTransformer;
 import com.kuka.h2g.domain.address.Address;
 import com.kuka.h2g.domain.customer.Customer;
 import org.junit.jupiter.api.BeforeEach;

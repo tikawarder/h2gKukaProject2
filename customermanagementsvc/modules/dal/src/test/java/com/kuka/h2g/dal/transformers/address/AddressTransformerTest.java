@@ -1,7 +1,9 @@
-package com.kuka.h2g.dal.transformers;
+package com.kuka.h2g.dal.transformers.address;
 
 import com.kuka.h2g.dal.entities.address.AddressEntity;
 import com.kuka.h2g.dal.entities.address.AddressTypeEntity;
+import com.kuka.h2g.dal.transformers.address.AddressTransformer;
+import com.kuka.h2g.dal.transformers.address.AddressTypeTransformer;
 import com.kuka.h2g.domain.address.Address;
 import com.kuka.h2g.domain.address.AddressType;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,7 +15,7 @@ import org.mockito.MockitoAnnotations;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class AddressTransformerTest {
+public class AddressTransformerTest {
 
     public static final long ID = 12L;
     public static final String CITY_NAME = "Baktalórántháza";

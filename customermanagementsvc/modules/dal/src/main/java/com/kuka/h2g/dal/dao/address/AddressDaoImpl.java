@@ -1,9 +1,9 @@
-package com.kuka.h2g.dal.dao;
+package com.kuka.h2g.dal.dao.address;
 
 import com.kuka.h2g.dal.entities.address.AddressEntity;
 import com.kuka.h2g.dal.exceptions.NoReturnDataException;
 import com.kuka.h2g.dal.repositories.address.AddressRepository;
-import com.kuka.h2g.dal.transformers.AddressTransformer;
+import com.kuka.h2g.dal.transformers.address.AddressTransformer;
 import com.kuka.h2g.domain.address.Address;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
