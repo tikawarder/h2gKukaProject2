@@ -76,6 +76,44 @@ public class CustomerServiceTest {
     }
 
     @Test
+    void testCustomerFindByIdShouldReturnCustomerWithGivenId(){
+        //GIVEN
+        Customer customer = createCustomer(1L);
+
+        when(customerDao.findById(1L)).thenReturn(customer);
+
+        //WHEN
+        verifyNoInteractions(customerDao);
+
+        Customer result = underTest.findCustomerById(1L);
+
+        //THEN
+        verify(customerDao).findById(1L);
+        verifyNoMoreInteractions(customerDao);
+
+        assertEquals(customer,result);
+    }
+
+    @Test
+    void testFindAllCustomersShouldReturnAllCustomersInList(){
+        //GIVEN
+        List<Customer> customerList = List.of(createCustomer(1L));
+
+        when(customerDao.findAll()).thenReturn(customerList);
+
+        //WHEN
+        verifyNoInteractions(customerDao);
+
+        List<Customer> result = underTest.findAllCustomers();
+
+        //THEN
+        verify(customerDao).findAll();
+        verifyNoMoreInteractions(customerDao);
+
+        assertEquals(customerList,result);
+    }
+
+    @Test
     void testDeleteCustomerShouldReturnTrueForSuccessfulOperation(){
         //GIVEN
         Customer customer = createCustomer(1L);
