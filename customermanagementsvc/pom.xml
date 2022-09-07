@@ -101,6 +101,7 @@
 						<exclude>com/kuka/h2g/dal/exceptions/**</exclude>
 						<exclude>com/kuka/h2g/dal/repositories/**</exclude>
 						<exclude>com/kuka/h2g/dal/transformers/address/config/**</exclude>
+						<exclude>com/kuka/h2g/controller/**/**</exclude>
 					</excludes>
 				</configuration>
 				<executions>
