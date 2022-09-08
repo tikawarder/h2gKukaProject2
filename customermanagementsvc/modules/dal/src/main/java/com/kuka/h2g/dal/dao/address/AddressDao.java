@@ -15,4 +15,6 @@ public interface AddressDao {
     List<Address> findByCity(String city);
 
     boolean delete(Address address);
+
+    boolean deleteById (long id);
 }

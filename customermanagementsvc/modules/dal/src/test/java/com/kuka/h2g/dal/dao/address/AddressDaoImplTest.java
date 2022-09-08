@@ -48,6 +48,8 @@ public class AddressDaoImplTest {
         //given
         Address domain = createDomain(ADDRESS_ID);
         AddressEntity entity = createEntity(ADDRESS_ID);
+        AddressEntity savedEntity = createEntity(ADDRESS_ID);
+        when(repository.save(entity)).thenReturn(savedEntity);
         when(transformer.transform(domain)).thenReturn(entity);
         when(transformer.transform(entity)).thenReturn(domain);
         //when
