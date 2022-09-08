@@ -22,10 +22,9 @@ public class AddressDaoImpl implements AddressDao {
 
     @Override
     public Address save(Address address) {
-        AddressEntity addressEntity = transformer.transform(address);
-        repository.save(addressEntity);
-        log.info("Address saved to database with id: {}", addressEntity.getId());
-        return transformer.transform(addressEntity);
+        AddressEntity savedEntity = repository.save(transformer.transform(address));
+        log.info("Address saved to database with id: {}", savedEntity.getId());
+        return transformer.transform(savedEntity);
     }
 
     @Override
@@ -55,7 +54,13 @@ public class AddressDaoImpl implements AddressDao {
     public boolean delete(Address address) {
         AddressEntity addressEntity = transformer.transform(address);
         repository.delete(addressEntity);
-        log.info("Address deleted from database with id: {}", addressEntity.getId());
+        log.info("Deleting address from database with id: {}", addressEntity.getId());
         return repository.findById(addressEntity.getId()).isEmpty();
+    }
+
+    @Override
+    public boolean deleteById(long id) {
+        repository.deleteById(id);
+        return repository.findById(id).isEmpty();
     }
 }
