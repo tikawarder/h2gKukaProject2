@@ -3,14 +3,21 @@ package com.kuka.h2g.dto.address;
 import lombok.Builder;
 import lombok.Value;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 @Value
 @Builder(setterPrefix = "with")
 public class AddressDto {
-    private long id;
-    private String zipCode;
-    private String state;
-    private String city;
-    private String streetName;
-    private AddressTypeDto addressTypeDto;
-    private String number;
+    long id;
+    @Size(min=4)
+    String zipCode;
+    String state;
+    @NotBlank
+    String city;
+    @NotBlank
+    String streetName;
+    AddressTypeDto addressTypeDto;
+    @NotBlank
+    String number;
 }
