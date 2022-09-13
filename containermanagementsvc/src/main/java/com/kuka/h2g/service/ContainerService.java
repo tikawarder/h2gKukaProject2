@@ -14,7 +14,7 @@ public class ContainerService {
     ContainerDao containerDao;
 
     public Container save (Container container){
-        return containerDao.create(container);
+        return containerDao.save(container);
     }
 
     public Container findById (long id){
@@ -24,4 +24,13 @@ public class ContainerService {
     public List<Container> findAll(){
         return containerDao.findAll();
     }
+
+    public boolean delete(Container container){
+        return containerDao.delete(container);
+    }
+    public boolean deleteById(Long id){
+        return containerDao.deleteById(id);
+    }
+
+
 }

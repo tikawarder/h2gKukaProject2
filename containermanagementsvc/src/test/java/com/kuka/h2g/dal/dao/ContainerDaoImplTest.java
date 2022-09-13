@@ -1,6 +1,5 @@
-package dal.dao;
+package com.kuka.h2g.dal.dao;
 
-import com.kuka.h2g.dal.dao.ContainerDaoImpl;
 import com.kuka.h2g.dal.entities.ContainerEntity;
 import com.kuka.h2g.dal.entities.ContainerSizeEntity;
 import com.kuka.h2g.dal.repositories.ContainerRepository;
@@ -47,7 +46,7 @@ public class ContainerDaoImplTest {
         when(transformer.transform(savedEntity)).thenReturn(domain);
         //when
         verifyNoInteractions(repository, transformer);
-        Container result = underTest.create(domain);
+        Container result = underTest.save(domain);
         //then
         verify(transformer).transform(savedEntity);
         verify(transformer).transform(domain);
@@ -91,6 +90,42 @@ public class ContainerDaoImplTest {
         verify(transformer).transform(entity);
         verifyNoMoreInteractions(repository, transformer);
         assertEquals(domain, result);
+    }
+
+    @Test
+    void testDeleteShouldDeleteGivenContainerAndReturnTrue(){
+        //GIVEN
+        ContainerEntity entity = createContainerEntity(CONTAINER_ID);
+        Container domain = createContainer(CONTAINER_ID);
+
+        when(transformer.transform(domain)).thenReturn(entity);
+        when(repository.findById(CONTAINER_ID)).thenReturn(Optional.empty());
+        //WHEN
+        verifyNoInteractions(repository,transformer);
+        boolean result = underTest.delete(domain);
+
+        //THEN
+        verify(transformer).transform(domain);
+        verify(repository).findById(14L);
+        verify(repository).delete(transformer.transform(domain));
+
+        assertTrue(result);
+    }
+
+    @Test
+    void testDeleteByIdShouldDeleteGivenContainerAndReturnTrue(){
+        //GIVEN
+        when(repository.findById(CONTAINER_ID)).thenReturn(Optional.empty());
+        //WHEN
+        verifyNoInteractions(repository,transformer);
+        boolean result = underTest.deleteById(CONTAINER_ID);
+
+        //THEN
+        verify(repository).deleteById(CONTAINER_ID);
+        verify(repository).findById(CONTAINER_ID);
+        verifyNoMoreInteractions(repository,transformer);
+
+        assertTrue(result);
     }
 
     private ContainerEntity createContainerEntity(long id){

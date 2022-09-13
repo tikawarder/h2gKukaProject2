@@ -18,7 +18,7 @@ public class ContainerDaoImpl implements ContainerDao {
     private ContainerTransformer transformer;
 
     @Override
-    public Container create(Container container) {
+    public Container save(Container container) {
         ContainerEntity entity = repository.save(transformer.transform(container));
         return transformer.transform(entity);
     }
@@ -33,5 +33,17 @@ public class ContainerDaoImpl implements ContainerDao {
     @Override
     public Container findById(long id) {
         return transformer.transform(repository.findById(id).orElseThrow(NoReturnDataException::new));
+    }
+
+    @Override
+    public boolean delete(Container container) {
+        repository.delete(transformer.transform(container));
+        return repository.findById(container.getId()).isEmpty();
+    }
+
+    @Override
+    public boolean deleteById(long id) {
+        repository.deleteById(id);
+        return repository.findById(id).isEmpty();
     }
 }
