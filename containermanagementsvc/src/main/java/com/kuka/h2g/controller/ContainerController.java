@@ -41,4 +41,17 @@ public class ContainerController {
         log.info("Creating Container with id {}",container.getId());
         return ResponseEntity.status(HttpStatus.CREATED).body(transformer.transform(container));
     }
+
+    @DeleteMapping
+    public ResponseEntity<Boolean> delete(@RequestBody ContainerDto containerDto) {
+        log.info("Deleting container: {}", containerDto);
+        return ResponseEntity.ok(service.delete(transformer.transform(containerDto)));
+    }
+
+    @DeleteMapping("/{containerId}")
+    public ResponseEntity<Boolean> deleteById(@PathVariable long containerId) {
+        log.info("Deleting container with id: {}", containerId);
+        return ResponseEntity.ok(service.deleteById(containerId));
+    }
+
 }
