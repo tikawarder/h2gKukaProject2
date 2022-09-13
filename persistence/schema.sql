@@ -22,11 +22,9 @@ CREATE TABLE IF NOT EXISTS Customers (
     FOREIGN KEY(address)
         REFERENCES Address (address_id)
 );
-
 CREATE TABLE Container IF NOT EXISTS(
     id 		    BIGINT		 	PRIMARY KEY AUTO_INCREMENT,
     size        VARCHAR(32) 	NOT NULL,
-    is_booked   BOOLEAN         NOT NULL,
 	FOREIGN KEY (size) 	        REFERENCES Container_size(id)
 );
 CREATE TABLE Container_size IF NOT EXISTS(

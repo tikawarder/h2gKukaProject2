@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class AddressTransformer {
 
     @Autowired
-    AddressTypeTransformer addressTypeTransformer;
+    private AddressTypeTransformer addressTypeTransformer;
 
     public Address transform (AddressEntity entity){
         return Address.builder()
