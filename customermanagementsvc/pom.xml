@@ -2,15 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<modules>
-		<module>modules/dal</module>
-		<module>modules/domain</module>
-		<module>modules/service</module>
-		<module>modules/dto</module>
-		<module>modules/controller</module>
-		<module>modules/integrationtest</module>
-		<module>web</module>
-	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -20,7 +11,7 @@
 	<groupId>com.kuka.h2g</groupId>
 	<artifactId>customermanagementsvc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<name>Customer Management svc</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -60,11 +51,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
@@ -86,6 +72,10 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -162,5 +152,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>customermanagementsvc</finalName>
 	</build>
 </project>

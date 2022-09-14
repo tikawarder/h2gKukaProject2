@@ -1,6 +1,22 @@
 # H2gKukaTeamproject
 
 
+## Build and Start services with Docker
+Commands:
+```
+--Container-Management-SVC (Must be in root folder to execute the commands)
+docker build -t kuka-containermanagementsvc . 
+
+--Customer-Management-SVC (Must be in root folder to execute the commands)
+docker build -t kuka-customermanagementsvc . 
+
+--Check the images were created
+docker images
+
+--Persistence (Must be in root folder to execute the commands)
+docker-compose up
+```
+
 
 ## Getting started
 

@@ -1,4 +1,9 @@
 # Spring Boot configuration
 spring:
   profiles:
-    active: development
+    active: dev
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/Resource
+    username: postgres
+    password: postgres
