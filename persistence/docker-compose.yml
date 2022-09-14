@@ -1,8 +1,7 @@
 version: '3.8'
 services:
   customermanagementsvc:
-    image: "tothadam98/kuka-customermanagementsvc:latest"
-    restart: always
+    image: "kuka-customermanagementsvc:latest"
     ports:
       - '8080:8080'
     environment:
@@ -11,6 +10,16 @@ services:
       - db
     volumes:
       - customer:/var/lib/customer/service
+  containermanagementsvc:
+      image: "kuka-containermanagementsvc:latest"
+      ports:
+        - '8081:8081'
+      environment:
+        - JAVA_OPTS=
+      depends_on:
+        - db
+      volumes:
+        - customer:/var/lib/container/service
   db:
     image: postgres:14.1-alpine
     restart: always
@@ -26,4 +35,6 @@ volumes:
   db:
     driver: local
   customer:
+    driver: local
+  container:
     driver: local
