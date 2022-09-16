@@ -1,4 +1,4 @@
-package com.kuka.h2g.dal.entities;
+package com.kuka.h2g.entities.container;
 
 public enum ContainerSizeEntity {
     _5M3("5m3"),_8M3("8m3"),_10M3("10m3");

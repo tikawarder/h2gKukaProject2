@@ -1,4 +1,4 @@
-package com.kuka.h2g.dal.entities;
+package com.kuka.h2g.entities.container;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

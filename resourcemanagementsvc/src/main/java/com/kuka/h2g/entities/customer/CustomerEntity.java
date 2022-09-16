@@ -1,6 +1,6 @@
-package com.kuka.h2g.dal.entities.customer;
+package com.kuka.h2g.entities.customer;
 
-import com.kuka.h2g.dal.entities.address.AddressEntity;
+import com.kuka.h2g.entities.address.AddressEntity;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 

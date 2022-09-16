@@ -1,4 +1,4 @@
-package com.kuka.h2g.dal.entities.address;
+package com.kuka.h2g.entities.address;
 
 public enum AddressTypeEntity {
     UTCA("utca"),TÉR("tér"),ÚT("út"),KÖZ("köz"),DŰLŐ("dűlő");
