@@ -1,12 +1,12 @@
-package com.kuka.h2g.dal.repositories.address;
+package com.kuka.h2g.repositories.address;
 
-import com.kuka.h2g.dal.entities.address.AddressEntity;
+import com.kuka.h2g.entities.address.AddressEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
 
-@Repository
+@RepositoryRestResource
 public interface AddressRepository extends JpaRepository<AddressEntity,Long> {
 
     List<AddressEntity> findAllByCity(String city);

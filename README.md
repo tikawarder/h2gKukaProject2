@@ -10,6 +10,9 @@ docker build -t kuka-containermanagementsvc .
 --Customer-Management-SVC (Must be in root folder to execute the commands)
 docker build -t kuka-customermanagementsvc . 
 
+--Resource-Management-SVC (Must be in root folder to execute the commands)
+docker build -t kuka-resourcemanagementsvc . 
+
 --Check the images were created
 docker images
 
