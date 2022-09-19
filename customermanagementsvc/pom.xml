@@ -90,8 +90,10 @@
 						<exclude>com/kuka/h2g/dal/entities/**</exclude>
 						<exclude>com/kuka/h2g/dal/exceptions/**</exclude>
 						<exclude>com/kuka/h2g/dal/repositories/**</exclude>
-						<exclude>com/kuka/h2g/dal/transformers/config/**</exclude>
+						<exclude>com/kuka/h2g/dal/transformers/**/**</exclude>
 						<exclude>com/kuka/h2g/controller/**/**</exclude>
+						<exclude>com/kuka/h2g/dto/**/**</exclude>
+						<exclude>com/kuka/h2g/web/**</exclude>
 					</excludes>
 				</configuration>
 				<executions>
