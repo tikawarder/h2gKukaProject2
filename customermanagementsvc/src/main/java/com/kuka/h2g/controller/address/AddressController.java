@@ -10,8 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @Slf4j
 @RestController
 @RequestMapping("/address")
@@ -23,29 +21,9 @@ public class AddressController {
     private AddressDtoTransformer transformer;
 
     @GetMapping
-    public ResponseEntity<List<AddressDto>> findAll() {
-        return ResponseEntity.ok(service.findAll().stream()
-                .map(transformer::transform)
-                .toList());
-    }
-
-    @GetMapping
     public ResponseEntity<AddressDto> findById (@RequestParam long id) {
         log.info("Searching address with ID: {}", id);
         return ResponseEntity.ok(transformer.transform(service.findById(id)));
-    }
-
-    @GetMapping
-    public ResponseEntity<List<AddressDto>> findByCity (@RequestParam String city){
-        return ResponseEntity.ok(service.findByCity(city).stream()
-                .map(transformer::transform)
-                .toList());
-    }
-
-    @PutMapping
-    public ResponseEntity<AddressDto> update (@RequestBody AddressDto addressDto){
-        Address address = service.update(transformer.transform(addressDto));
-        return ResponseEntity.ok(transformer.transform(address));
     }
 
     @PostMapping
@@ -54,14 +32,14 @@ public class AddressController {
         return ResponseEntity.status(HttpStatus.CREATED).body(transformer.transform(address));
     }
 
+    @PutMapping
+    public ResponseEntity<AddressDto> update(@RequestBody AddressDto addressDto) {
+        return ResponseEntity.ok(transformer.transform(service.save(transformer.transform(addressDto))));
+    }
+
     @DeleteMapping("/{addressId}")
     public ResponseEntity<Boolean> deleteById (@PathVariable long id){
         log.info("Deleting address with ID: {}", id);
         return ResponseEntity.ok(service.deleteById(id));
-    }
-
-    @DeleteMapping
-    public ResponseEntity<Boolean> delete (@RequestBody AddressDto addressDto){
-        return ResponseEntity.ok(service.delete(transformer.transform(addressDto)));
     }
 }

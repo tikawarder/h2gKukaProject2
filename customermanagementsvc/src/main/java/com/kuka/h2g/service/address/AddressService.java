@@ -1,43 +1,20 @@
 package com.kuka.h2g.service.address;
 
-import com.kuka.h2g.dal.dao.address.AddressDao;
 import com.kuka.h2g.domain.address.Address;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class AddressService {
 
-    @Autowired
-    private AddressDao addressDao;
-
-    public Address update (Address address){
-       return addressDao.save(address);
-    }
-
     public Address save (Address address){
-        return addressDao.save(address);
+        return Address.builder().build(); //ToDo: create connection to Resource svc
     }
 
     public Address findById (long id) {
-        return addressDao.findById(id);
-    }
-
-    public List<Address> findAll(){
-        return addressDao.findAll();
-    }
-
-    public boolean delete (Address address){
-        return addressDao.delete(address);
+        return Address.builder().build(); //ToDo: create connection to Resource svc
     }
 
     public boolean deleteById (long id){
-        return addressDao.deleteById(id);
-    }
-
-    public List<Address> findByCity (String city){
-        return addressDao.findByCity(city);
+        return false; //ToDo: create connection to Resource svc
     }
 }
