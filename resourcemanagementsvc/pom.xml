@@ -15,9 +15,14 @@
 	<description>Resource Management Service</description>
 	<properties>
 		<java.version>17</java.version>
-		<springdoc-openapi-ui.version>1.6.9</springdoc-openapi-ui.version>
+MAIN		<springdoc-openapi-ui.version>1.6.11</springdoc-openapi-ui.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-data-rest</artifactId>
+			<version>1.6.11</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
