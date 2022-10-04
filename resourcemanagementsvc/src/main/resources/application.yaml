@@ -2,8 +2,9 @@
 spring:
   # Database
   datasource:
+    platform: postgres
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://db:5432/Resource
+    url: jdbc:postgresql://localhost:5432/Resource
     username: postgres
     password: postgres
   # JPA properties

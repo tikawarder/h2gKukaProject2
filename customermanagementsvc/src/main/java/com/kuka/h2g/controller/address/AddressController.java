@@ -1,6 +1,6 @@
 package com.kuka.h2g.controller.address;
 
-import com.kuka.h2g.controller.transformers.AddressDtoTransformer;
+import com.kuka.h2g.controller.container.transformers.AddressDtoTransformer;
 import com.kuka.h2g.domain.address.Address;
 import com.kuka.h2g.dto.address.AddressDto;
 import com.kuka.h2g.service.address.AddressService;
