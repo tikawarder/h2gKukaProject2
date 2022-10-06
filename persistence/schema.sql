@@ -1,37 +1,38 @@
-CREATE TABLE Address_type IF NOT EXISTS(
-    id 		    BIGINT		 	PRIMARY KEY AUTO_INCREMENT,
-    type 	    VARCHAR(32) 	NOT NULL,
+CREATE TABLE IF NOT EXISTS Address_type(
+    id 		    SERIAL PRIMARY KEY,
+    type 	    VARCHAR(32) 	NOT NULL
 );
-CREATE TABLE Address IF NOT EXISTS(
-    id 		    BIGINT		 	PRIMARY KEY AUTO_INCREMENT,
-    zipCode     VARCHAR(8)		NOT NULL,
+
+CREATE TABLE IF NOT EXISTS Address(
+    id 		    SERIAL          PRIMARY KEY,
+    zip_code     VARCHAR(8)		NOT NULL,
     state 	    VARCHAR(32),
     city 	    VARCHAR(32) 	NOT NULL,
     street_name VARCHAR(32)		NOT NULL,
-    address_type INTEGER(32) 	NOT NULL,
+    address_type INTEGER 	NOT NULL,
 	number 	    VARCHAR(8)	 	NOT NULL,
-	FOREIGN KEY (address) 	REFERENCES Address_type(id)
+	FOREIGN KEY (address_type) 	REFERENCES Address_type(id)
 );
+
 CREATE TABLE IF NOT EXISTS Customers (
-    customer_id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    firstName VARCHAR(24) NOT NULL,
-    secondName VARCHAR(24) NOT NULL,
-    address_id BIGINT NOT NULL,
-    phoneNumber VARCHAR(24),
+    customer_id SERIAL          PRIMARY KEY,
+    first_name VARCHAR(24) NOT NULL,
+    second_name VARCHAR(24) NOT NULL,
+    address_id INTEGER NOT NULL,
+    phone_number VARCHAR(24),
     email VARCHAR(50),
-    FOREIGN KEY(address)
-        REFERENCES Address (address_id)
+    FOREIGN KEY(address_id)
+        REFERENCES Address (id)
 );
-CREATE TABLE Container IF NOT EXISTS(
-    id 		    BIGINT		 	PRIMARY KEY AUTO_INCREMENT,
-    size        VARCHAR(32) 	NOT NULL,
-	FOREIGN KEY (size) 	        REFERENCES Container_size(id)
+
+
+
+CREATE TABLE IF NOT EXISTS Container(
+    id 		    SERIAL          PRIMARY KEY,
+    size        VARCHAR(32) 	NOT NULL
 );
-CREATE TABLE Container_size IF NOT EXISTS(
-    id 		    BIGINT		 	PRIMARY KEY AUTO_INCREMENT,
-    type 	    VARCHAR(32) 	NOT NULL
-);
-CREATE TABLE Waste IF NOT EXISTS(
-    id          BIGINT          PRIMARY KEY AUTO_INCREMENT,
+
+CREATE TABLE IF NOT EXISTS Waste(
+    id          SERIAL          PRIMARY KEY,
     type        VARCHAR(32)     NOT NULL
 );

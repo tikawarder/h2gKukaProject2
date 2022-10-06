@@ -1,7 +1,7 @@
 package com.kuka.h2g.resourcemanagementsvc.controller.transformers.address;
 
-import com.kuka.h2g.resourcemanagementsvc.domain.address.Address;
 import com.kuka.h2g.resourcemanagementsvc.dto.address.AddressDto;
+import com.kuka.h2g.resourcemanagementsvc.domain.address.Address;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

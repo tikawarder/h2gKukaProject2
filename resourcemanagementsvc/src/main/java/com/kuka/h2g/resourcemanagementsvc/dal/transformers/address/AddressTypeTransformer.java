@@ -12,8 +12,9 @@ import java.util.Map;
 @Component
 public class AddressTypeTransformer {
 
+    @Autowired
     private Map<AddressTypeEntity, AddressType> addressTypeEntityToDomainMap;
-
+    @Autowired
     private Map<AddressType, AddressTypeEntity> addressTypeDomainToEntityMap;
 
     public AddressType transform (AddressTypeEntity entity){

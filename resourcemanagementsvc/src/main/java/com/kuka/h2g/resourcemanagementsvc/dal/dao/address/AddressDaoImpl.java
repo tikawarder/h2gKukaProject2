@@ -1,10 +1,10 @@
 package com.kuka.h2g.resourcemanagementsvc.dal.dao.address;
 
-import com.kuka.h2g.resourcemanagementsvc.dal.exceptions.NoReturnDataException;
+import com.kuka.h2g.resourcemanagementsvc.dal.entities.address.AddressEntity;
 import com.kuka.h2g.resourcemanagementsvc.dal.repositories.address.AddressRepository;
 import com.kuka.h2g.resourcemanagementsvc.dal.transformers.address.AddressTransformer;
+import com.kuka.h2g.resourcemanagementsvc.dal.exceptions.NoReturnDataException;
 import com.kuka.h2g.resourcemanagementsvc.domain.address.Address;
-import com.kuka.h2g.resourcemanagementsvc.dal.entities.address.AddressEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,7 @@
 package com.kuka.h2g.resourcemanagementsvc.controller.transformers.container.config;
 
-import com.kuka.h2g.resourcemanagementsvc.domain.container.ContainerSize;
 import com.kuka.h2g.resourcemanagementsvc.dto.container.ContainerSizeDto;
+import com.kuka.h2g.resourcemanagementsvc.domain.container.ContainerSize;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

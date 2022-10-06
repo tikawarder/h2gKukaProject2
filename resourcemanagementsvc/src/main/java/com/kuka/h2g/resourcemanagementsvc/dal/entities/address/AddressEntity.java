@@ -7,11 +7,12 @@ import javax.persistence.*;
 
 @Entity
 @Data
+@Table(name = "address")
 @NoArgsConstructor
 public class AddressEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String zipCode;
@@ -28,4 +29,8 @@ public class AddressEntity {
     private AddressTypeEntity addressType;
 
     private String number;
+
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "customerId", nullable = false)
+//    private CustomerEntity customerEntity;
 }

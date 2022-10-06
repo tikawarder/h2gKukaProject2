@@ -20,7 +20,7 @@ public class CustomerTransformer {
         customerEntity.setFirstName(customer.getFirstName());
         customerEntity.setSecondName(customer.getSecondName());
         customerEntity.setAddresses(customer.getAddresses().stream().map(addressTransformer::transform).toList());
-        customerEntity.setPhone(customer.getPhone());
+        customerEntity.setPhoneNumber(customer.getPhone());
         customerEntity.setEmail(customer.getEmail());
 
         return customerEntity;
@@ -32,7 +32,7 @@ public class CustomerTransformer {
                 .withFirstName(customerEntity.getFirstName())
                 .withSecondName(customerEntity.getSecondName())
                 .withAddresses(customerEntity.getAddresses().stream().map(addressTransformer::transform).toList())
-                .withPhone(customerEntity.getPhone())
+                .withPhone(customerEntity.getPhoneNumber())
                 .withEmail(customerEntity.getEmail())
                 .build();
     }

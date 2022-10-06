@@ -1,4 +1,4 @@
-package com.kuka.h2g.dto.address;
+package com.kuka.h2g.customermanagementsvc.dto;
 
 import lombok.Builder;
 import lombok.Value;
@@ -21,3 +21,4 @@ public class AddressDto {
     @NotBlank
     String number;
 }
+
