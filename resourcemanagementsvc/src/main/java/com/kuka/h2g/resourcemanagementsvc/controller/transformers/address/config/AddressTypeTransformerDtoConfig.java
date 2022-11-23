@@ -1,15 +1,15 @@
-package com.kuka.h2g.controller.container.transformers.addressTypeTransformerConfig;
+package com.kuka.h2g.resourcemanagementsvc.controller.transformers.address.config;
 
 
-import com.kuka.h2g.domain.address.AddressType;
-import com.kuka.h2g.dto.address.AddressTypeDto;
+import com.kuka.h2g.resourcemanagementsvc.dto.address.AddressTypeDto;
+import com.kuka.h2g.resourcemanagementsvc.domain.address.AddressType;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.Map;
 
 @Configuration
-public class AddressTypeTransformerConfig {
+public class AddressTypeTransformerDtoConfig {
 
     @Bean
     public Map<AddressType, AddressTypeDto> domainToDtoMap() {

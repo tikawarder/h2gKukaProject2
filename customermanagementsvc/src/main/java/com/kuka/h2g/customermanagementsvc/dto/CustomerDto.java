@@ -1,13 +1,13 @@
-package com.kuka.h2g.dto.customer;
+package com.kuka.h2g.customermanagementsvc.dto;
 
 
-import com.kuka.h2g.dto.address.AddressDto;
+
 import lombok.Builder;
 import lombok.Value;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
+
 import javax.validation.constraints.Size;
 import java.util.List;
 

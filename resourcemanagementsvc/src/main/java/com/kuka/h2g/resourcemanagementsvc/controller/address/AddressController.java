@@ -1,8 +1,8 @@
 package com.kuka.h2g.resourcemanagementsvc.controller.address;
 
 import com.kuka.h2g.resourcemanagementsvc.controller.transformers.address.AddressDtoTransformer;
-import com.kuka.h2g.resourcemanagementsvc.domain.address.Address;
 import com.kuka.h2g.resourcemanagementsvc.dto.address.AddressDto;
+import com.kuka.h2g.resourcemanagementsvc.domain.address.Address;
 import com.kuka.h2g.resourcemanagementsvc.service.address.AddressService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

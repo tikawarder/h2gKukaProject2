@@ -1,4 +1,4 @@
-package com.kuka.h2g.web;
+package com.kuka.h2g.customermanagementsvc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

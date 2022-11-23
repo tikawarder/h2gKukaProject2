@@ -1,8 +1,8 @@
 package com.kuka.h2g.resourcemanagementsvc.controller.transformers.customer;
 
+import com.kuka.h2g.resourcemanagementsvc.dto.customer.CustomerDto;
 import com.kuka.h2g.resourcemanagementsvc.controller.transformers.address.AddressDtoTransformer;
 import com.kuka.h2g.resourcemanagementsvc.domain.customer.Customer;
-import com.kuka.h2g.resourcemanagementsvc.dto.customer.CustomerDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

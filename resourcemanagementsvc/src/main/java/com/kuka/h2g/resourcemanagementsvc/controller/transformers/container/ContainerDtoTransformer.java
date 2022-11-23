@@ -1,7 +1,7 @@
 package com.kuka.h2g.resourcemanagementsvc.controller.transformers.container;
 
-import com.kuka.h2g.resourcemanagementsvc.domain.container.Container;
 import com.kuka.h2g.resourcemanagementsvc.dto.container.ContainerDto;
+import com.kuka.h2g.resourcemanagementsvc.domain.container.Container;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

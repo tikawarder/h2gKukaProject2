@@ -1,8 +1,7 @@
-package com.kuka.h2g.controller.customer;
+package com.kuka.h2g.customermanagementsvc.controller;
 
-import com.kuka.h2g.controller.container.transformers.CustomerDtoTransformer;
-import com.kuka.h2g.dto.customer.CustomerDto;
-import com.kuka.h2g.service.customer.CustomerService;
+import com.kuka.h2g.customermanagementsvc.dto.CustomerDto;
+import com.kuka.h2g.customermanagementsvc.service.CustomerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,25 +15,23 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
-    @Autowired
-    private CustomerDtoTransformer customerDtoTransformer;
 
     @PostMapping
     public ResponseEntity<CustomerDto> createCustomer(@RequestBody CustomerDto newCustomer) {
         log.info("Create customer");
-        return ResponseEntity.status(HttpStatus.CREATED).body(customerDtoTransformer.transform(customerService.saveCustomer(customerDtoTransformer.transform(newCustomer))));
+        return ResponseEntity.status(HttpStatus.CREATED).body(customerService.saveCustomer(newCustomer));
     }
 
     @PutMapping
     public ResponseEntity<CustomerDto> updateCustomer(@RequestBody CustomerDto updateCustomer) {
         log.info("Update customer: ");
-        return ResponseEntity.ok(customerDtoTransformer.transform(customerService.saveCustomer(customerDtoTransformer.transform(updateCustomer))));
+        return ResponseEntity.ok(customerService.saveCustomer(updateCustomer));
     }
 
     @GetMapping
     public ResponseEntity<CustomerDto> findCustomerById(@RequestParam long customerId) {
         log.info("Searching for customer with ID:{}", customerId);
-        return ResponseEntity.ok(customerDtoTransformer.transform(customerService.findCustomerById(customerId)));
+        return ResponseEntity.ok(customerService.findCustomerById(customerId));
     }
 
     @DeleteMapping("/{customerId}")

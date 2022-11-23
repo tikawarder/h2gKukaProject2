@@ -6,22 +6,30 @@ import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Data
+@Table(name = "customers")
 @NoArgsConstructor
 public class CustomerEntity {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long customerId;
     private String firstName;
     private String secondName;
-    @OneToMany
-    @JoinColumn(name = "address_id")
-    private List<AddressEntity> addresses;
-    private String phone;
+
+//    @OneToMany(mappedBy = "customerEntity",cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = AddressEntity.class,cascade = CascadeType.ALL,fetch = FetchType.EAGER,orphanRemoval = true)
+    @JoinColumn(name = "customerId",referencedColumnName = "customerId")
+    private List<AddressEntity> addresses = new ArrayList<>();
+    private String phoneNumber;
     private String email;
 }
+
+////@JoinTable(name = "address",joinColumns =
+//@OneToMany(targetEntity = AddressEntity.class,cascade = CascadeType.ALL,fetch = FetchType.EAGER,orphanRemoval = true)
+//@JoinColumn(name = "customerIdd",referencedColumnName = "customerId")
