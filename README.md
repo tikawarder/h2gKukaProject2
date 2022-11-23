@@ -1,25 +1,13 @@
 # H2gKukaTeamproject
 
-
-## Build and Start services with Docker
+## From now the database (previously PostGres from container) was replaced with embedded H2 which start with resourcemanagementsvc
+## Build and Start services
 Commands:
-```
---Container-Management-SVC (Must be in root folder to execute the commands)
-docker build -t kuka-containermanagementsvc . 
-
---Customer-Management-SVC (Must be in root folder to execute the commands)
-docker build -t kuka-customermanagementsvc . 
-
---Resource-Management-SVC (Must be in root folder to execute the commands)
-docker build -t kuka-resourcemanagementsvc . 
-
---Check the images were created
-docker images
-
---Persistence (Must be in root folder to execute the commands)
-docker-compose up
-```
-
+1, mvn clean instal on both services
+2, run both of them
+3, resourcemanagementsvc (Localhost port 8082) is responsible for storing to database
+3, customermanagementsvc (Localhost port 8080) is storing through resourcemanagementsvc
+4, Swagger-ui can be used for testing Rest
 
 ## Getting started
 

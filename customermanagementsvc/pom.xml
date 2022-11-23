@@ -84,7 +84,7 @@
 						<exclude>com/kuka/h2g/dal/transformers/**/**</exclude>
 						<exclude>com/kuka/h2g/controller/**/**</exclude>
 						<exclude>com/kuka/h2g/dto/**/**</exclude>
-						<exclude>com/kuka/h2g/web/**</exclude>
+						<exclude>com/kuka/h2g/**</exclude>
 					</excludes>
 				</configuration>
 				<executions>

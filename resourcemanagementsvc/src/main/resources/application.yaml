@@ -2,17 +2,22 @@
 spring:
   # Database
   datasource:
-    platform: postgres
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/Resource
-    username: postgres
-    password: postgres
+    platform: h2o
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:store
+    username: tomi
+    password: tomi
   # JPA properties
   jpa:
-    hibernate:
-      ddl-auto: none
+#    hibernate.ddl-auto: none
+    init.mode: always
+#    defer-datasource-initialization: true
+    hibernate.use-new-id-generator-mappings: true
     show-sql: true
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
 # Logger configuration
 logging:
   pattern:
