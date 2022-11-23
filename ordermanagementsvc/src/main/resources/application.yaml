@@ -1,0 +1,30 @@
+# Spring Boot configuration
+spring:
+  # Database
+  datasource:
+    platform: h2o
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:orders
+    username: tomi
+    password: tomi
+  # JPA properties
+  jpa:
+#    hibernate.ddl-auto: none
+    init.mode: always
+#    defer-datasource-initialization: true
+    hibernate.use-new-id-generator-mappings: true
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+# Logger configuration
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: info
+    org.hibernate: info
+# Server configuration
+server:
+  port: 8084 #set your port
