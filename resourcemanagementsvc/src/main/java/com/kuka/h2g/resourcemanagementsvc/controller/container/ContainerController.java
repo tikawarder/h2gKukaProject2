@@ -1,8 +1,11 @@
 package com.kuka.h2g.resourcemanagementsvc.controller.container;
 
 import com.kuka.h2g.resourcemanagementsvc.controller.transformers.container.ContainerDtoTransformer;
+import com.kuka.h2g.resourcemanagementsvc.controller.transformers.container.ContainerSizeDtoTransformer;
+import com.kuka.h2g.resourcemanagementsvc.domain.container.ContainerSize;
 import com.kuka.h2g.resourcemanagementsvc.dto.container.ContainerDto;
 import com.kuka.h2g.resourcemanagementsvc.domain.container.Container;
+import com.kuka.h2g.resourcemanagementsvc.dto.container.ContainerSizeDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +24,8 @@ public class ContainerController {
     ContainerService service;
     @Autowired
     ContainerDtoTransformer transformer;
+    @Autowired
+    ContainerSizeDtoTransformer sizeTransformer;
 
     @GetMapping(value = "/findAll")
     public ResponseEntity<List<ContainerDto>> findAll() {
@@ -34,6 +39,15 @@ public class ContainerController {
         log.info("Finding Container with {}", id);
         return ResponseEntity.ok(transformer.transform(service.findById(id)));
     }
+
+//    @GetMapping
+//    public ResponseEntity<List<ContainerDto>> findBySize(@RequestParam ContainerSizeDto size){
+//        log.info("Collecting Container Ids with {}", size);
+//        ContainerSize containerSize = sizeTransformer.transform(size);
+//        return ResponseEntity.ok(service.findIdsBySize(containerSize).stream()
+//                                                              .map(transformer::transform)
+//                                                              .toList());
+//    }
 
     @PostMapping
     public ResponseEntity<ContainerDto> create (@RequestBody ContainerDto containerDto){

@@ -5,6 +5,7 @@ import com.kuka.h2g.resourcemanagementsvc.dal.repositories.container.ContainerRe
 import com.kuka.h2g.resourcemanagementsvc.dal.transformers.container.ContainerTransformer;
 import com.kuka.h2g.resourcemanagementsvc.dal.exceptions.NoReturnDataException;
 import com.kuka.h2g.resourcemanagementsvc.domain.container.Container;
+import com.kuka.h2g.resourcemanagementsvc.domain.container.ContainerSize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -46,5 +47,12 @@ public class ContainerDaoImpl implements ContainerDao {
     public boolean deleteById(long id) {
         repository.deleteById(id);
         return repository.findById(id).isEmpty();
+    }
+
+    @Override
+    public List<Container> findBySize(ContainerSize size) {
+        return repository.findIdBySize(size).stream()
+                         .map(transformer::transform)
+                         .toList();
     }
 }
